@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row">
             <div class="col m-5">
-            <h2>Área Adiministrativa de Gerenciamento</h2>
+            <h2>login</h2>
             <form class="mt-5" method="POST" action="valida.php">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Insira o E-mail</label>

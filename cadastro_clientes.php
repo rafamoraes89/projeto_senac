@@ -6,11 +6,13 @@ if(!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != true){
     header("Location:index.php");
 };
 
+
 if($_SESSION['usuarioniveisacessoid']=="2"){
     header("Location:consulta_cliente.php");
 };
 
 ?>
+
 
 <html lang="pt-BR">
 <head>
@@ -24,7 +26,7 @@ if($_SESSION['usuarioniveisacessoid']=="2"){
     <!-- JS BOOTSTRAP -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    
+
 </head>
 <body>
     <div class="container">
@@ -47,31 +49,35 @@ if($_SESSION['usuarioniveisacessoid']=="2"){
 			</nav>
         <div class="row">
             <div class="col">
-            <form id="login" method="POST" action="processa_cad_prod.php">
-            <h2 class="mt-5 mb-5">Cadastro de Produtos</h2>
+            <form id="login" method="POST" action="processa_cad_cliente.php">
+            <h2 class="mt-5 mb-5">Cadastro de Clientes</h2>
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Nome do produto</label>
-                <input type="text" class="form-control" name="nome_produto" placeholder="Insira o nome do produto" required>
+                <label for="exampleFormControlInput1" class="form-label">Nome</label>
+                <input type="text" class="form-control" name="nome" placeholder="Digite o Nome" required>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Quantidade produto</label>
-                <input type="text" class="form-control" name="quantidade_produto" placeholder="Digite a quantidade" required>
+                <label for="exampleFormControlInput1" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" placeholder="Digite o Email" required>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">Valor do produto</label>
-                <input type="text" class="form-control" name="valor_produto" placeholder="Digite o valor" required>
+                <label>Selecione 1 para administrador ou 2 para usuário</label>
+                <select name="nivel_de_acesso">
+                    <option value="1">1</option>
+                    <option value="2" selected>2</option>
+                </select>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Data de fabricação Produto</label>
-                <input type="text" class="form-control" name="fabricacao_produto" placeholder="Digite a data de fabricação" required>
+                <label for="exampleFormControlTextarea1" class="form-label">Senha</label><br>
+                <input type="password" name="senha" required>
             </div>
             <?php if( isset($_GET['inclusao']) && $_GET['inclusao']== 1){ ?>
                   <div class="bg-success p-2 text-white d-flex justify-content-center">
                   Registro inserido com sucesso
               </div>
           <?php  } ?>
+          
             <br>
-            <input type="submit"> 
+            <input type="submit">
         </form>
             </div>
         </div>

@@ -1,4 +1,10 @@
 <?php
+
+    session_start();
+
+    if(!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != true){
+        header("Location:index.php");
+    };
     $servidor = "localhost";
     $usuario = "root";
     $senha= "";
@@ -12,8 +18,5 @@
     }else{
         //  echo "Conexão realizada com sucesso";
     }
-
-
-
 
 ?>

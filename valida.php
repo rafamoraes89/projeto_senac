@@ -4,6 +4,10 @@
     // Abertura dos parâmetros para conectar ao banco de dados
     include_once ("conexao.php");
 
+    if(!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] != true){
+        header("Location:index.php");
+    };
+
     if ((isset($_POST['email']) && (isset($_POST['senha'])))) {
         $usuario = mysqli_real_escape_string($conn, $_POST['email']);//Converte o Email em string e ajusta caracteres especiais
         $senha = mysqli_real_escape_string($conn, $_POST['senha']);
@@ -21,10 +25,13 @@
             $_SESSION['usuarionome']=$resultado['nome'];
             $_SESSION['usuarioniveisacessoid']=$resultado['niveis_acesso_id'];
             $_SESSION['usuarioemail']=$resultado['email'];
+            
             if ($_SESSION['usuarioniveisacessoid']=="1") {
-                header("Location: cadastro_administrativo.php");
+                $_SESSION['autenticado'] = true;
+                header("Location: navega.php");
             }elseif ($_SESSION['usuarioniveisacessoid']=="2") {
-                header("Location: consulta_clientes.php");
+                $_SESSION['autenticado'] = true;
+                header("Location: consulta_cliente.php");
             }
         }else {
             $_SESSION['loginErro'] = "Usuário ou senha Inválido";

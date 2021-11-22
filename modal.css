@@ -1,0 +1,35 @@
+.modalEditar {
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  margin-top: -100px;
+  margin-left: -150px;
+  position: fixed;
+  padding: 10px;
+  background-color: rgb(49, 49, 49);
+  display: grid;
+  place-items: center;
+  z-index: 10;
+}
+.modalEditar form {
+  display: grid;
+  place-items: center;
+  gap: 0.3rem;
+  padding: 10px;
+  text-align: center;
+}
+.modalEditar .inputSubmit {
+  display: block;
+  width: 100%;
+  font-size: 1.2rem;
+}
+.modalEditar .inputClose {
+  display: block;
+  width: 100%;
+  color: white !important;
+  font-size: 1.2rem;
+}
+.modalEditar > form > label {
+  color: white;
+  font-weight: bolder;
+}
