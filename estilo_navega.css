@@ -1,0 +1,47 @@
+body{
+    background: rgba(255, 230, 230, 1);
+    padding-top: 5vh;
+}
+
+nav{
+    background: rgb(92, 40, 66);
+    
+}
+nav a{
+    color: white!important;
+}
+
+navbar{
+    display: flex;
+    justify-content: space-between !important;
+}
+
+.navbar-brand img{
+    width: 100px;
+}
+
+.btn-my{
+    
+    text-decoration: none;
+    margin: 1rem;
+    background: rgb(92, 40, 66);
+    width: 15rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    color: white;
+
+}
+
+.div-navega{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+a:hover{
+    text-decoration: none;
+    font-style: normal;
+    color: white;
+    font-weight: bold;
+}

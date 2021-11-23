@@ -8,28 +8,36 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <!--Fim Bootstrap-->
+    <link rel="stylesheet" href="estilo_index.css">
     <title>Área Adiministrativa</title>
 </head>
 <body>
 
-    <div class="container">
-        <div class="row">
-            <div class="col m-5">
-            <h2>login</h2>
-            <form class="mt-5" method="POST" action="valida.php">
-                <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">Insira o E-mail</label>
-                    <input type="email" class="form-control" placeholder="E-mail" name="email">
-                </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Insira a Senha</label>
-                    <input type="password" class="form-control" placeholder="Senha" name="senha">
-                </div>
-                <?php  session_start();    if(isset($_SESSION['loginErro'])){  ?>  <div id="emailHelp" class="form-text">Email ou senha inválido(s).</div> <?php } ?>
-                <button type="submit" class="btn btn-primary">Enviar</button>
+    <div class="container-my">
        
-            </form>
+        <div class="row-flex">
+            <div class="col-my1 div-titulo"> 
+                <h1>
+                    Critical Strike
+                </h1>
+            <p>
+            Mussum Ipsum, cacilds vidis litro abertis. Diuretics paradis num copo é motivis de denguis. Admodum accumsan disputationi eu sit.
+            </p>
             </div>
+            <div class="div-form-login">
+                <h2>login</h2>
+                    <form class="mt-1" method="POST" action="valida.php">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Insira o E-mail</label>
+                        <input type="email" class="form-control" placeholder="E-mail" name="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputPassword1" class="form-label">Insira a Senha</label>
+                        <input type="password" class="form-control" placeholder="Senha" name="senha">
+                    </div>
+                    <?php  session_start();    if(isset($_SESSION['loginErro'])){  ?>  <div id="emailHelp" class="form-text">Email ou senha inválido(s).</div> <?php } ?>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form></div>
         </div>
     </div>  
 </body>
