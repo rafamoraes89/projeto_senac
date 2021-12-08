@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.form-search {
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+.icon-trash-o {
+  font-size: 2rem;
+}
+.icon-edit {
+  font-size: 2rem;
+  color: rgb(57, 155, 212);
+}
+.input-search {
+  width: 50%;
+  min-width: 200px;
+  padding: 0;
+}
+tr {
+  color: rgb(53, 20, 36) !important;
+}
+td {
+  min-width: 100px;
+}
+
+.icon-edit {
+  color: rgb(53, 20, 36) !important;
+}
+
+.icon-trash-o {
+  color: firebrick;
+}
