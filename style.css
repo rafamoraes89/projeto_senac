@@ -1,0 +1,225 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Dancing Script', cursive;
+}
+
+img {
+  width: 100%;
+}
+.navbar-brand img {
+  width: 80px;
+}
+
+.cards a {
+  text-decoration: none;
+}
+header.row {
+  background: url(image/banner3.jpg);
+  background-position: 0;
+  background-size: cover;
+  height: 100vh;
+}
+header h1 {
+  text-align: center;
+  margin-top: 25vh;
+  font-size: 11rem;
+  color: rgba(255, 240, 240, 0.9);
+  font-weight: 700;
+}
+header p {
+  text-align: center;
+  color: rgba(255, 230, 230, 1);
+  font-size: 2.5rem;
+}
+nav {
+  font-size: 1.5rem;
+  background: black;
+  -webkit-box-shadow: 0px 8px 8px -2px rgba(0, 0, 0, 0.51);
+  box-shadow: 0px 4px 4px -1px rgba(0, 0, 0, 0.51);
+}
+.section2-cards {
+  display: grid;
+  place-items: center center center;
+}
+
+.section2 h1 {
+  text-align: center;
+  font-weight: 900;
+  margin-top: 15vh;
+  margin-bottom: 5vh;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 20px;
+  grid-gap: 20px;
+}
+.card-personal {
+  background-color: rgb(12, 2, 7);
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.18);
+}
+.container-cards {
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+.container-cards img {
+  width: 100%;
+  display: block;
+  border-radius: 20px 20px 0 0;
+}
+.container-cards:after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px 20px 0 0;
+  opacity: 0.5;
+}
+.card1 > .container-cards:after {
+  background-image: linear-gradient(135deg, #ffab1d, #f8501c);
+}
+.card2 > .container-cards:after {
+  background-image: linear-gradient(135deg, #ffab1d, #f8501c);
+}
+.card3 > .container-cards:after {
+  background-image: linear-gradient(135deg, #ffab1d, #f8501c);
+}
+.details {
+  padding: 20px 10px;
+}
+.details > h3 {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 10px 0 15px 0;
+}
+.details > p {
+  color: #a0a0a0;
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: 400;
+}
+
+/*=================== section 3 ======================= */
+.section3-bg h1 {
+  text-align: center;
+  color: white;
+  font-size: 3rem;
+  margin-top: 20vh;
+  padding-top: 10vh;
+}
+.section3-bg {
+  background: hsl(329, 100%, 5%, 1);
+}
+.section3-content {
+  padding-top: 10vh;
+  color: white;
+}
+
+#tabuleiros .image2 {
+  position: relative;
+  width: 80%;
+}
+
+#tabuleiros .image2::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: rgb(53, 20, 36);
+  position: absolute;
+  top: -15%;
+  left: 10%;
+  z-index: 0;
+}
+
+#tabuleiros .image2 img {
+  position: relative;
+}
+
+#tabuleiros .image2 img,
+#tabuleiros .image2::before {
+  border-radius: 0.25rem;
+}
+
+/*=========== Section 4 =================== */
+
+.card-personal2 {
+  display: flex !important;
+  gap: 1rem;
+}
+.carousel-item {
+  background: white !important;
+}
+/*========== section 5 ==================== */
+.empresa {
+  padding: 15vh 0;
+  font-size: 1.5rem;
+}
+
+footer {
+  color: rgb(233, 203, 233);
+  background: rgb(29, 29, 29);
+  text-align: center;
+}
+.social {
+  padding-top: 0.5rem;
+  padding-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+.social a {
+  text-decoration: none;
+  color: rgb(233, 203, 233);
+}
+.social a:hover {
+  color: rgb(201, 171, 201);
+}
+
+.copy {
+  padding: 0.5rem 0;
+  background: rgb(19, 19, 19);
+}
+
+@media (max-width: 990px) {
+  header.row {
+    padding: 1rem;
+    background-position: -20rem;
+  }
+
+  nav {
+    padding: 0;
+    background: black;
+  }
+  .navbar-toggler:focus {
+    box-shadow: 0 0 0 0 !important;
+    border: 2px solid gray !important;
+  }
+  .nav-items {
+    justify-content: flex-start;
+  }
+  header h1 {
+    font-size: 3rem;
+  }
+  header p {
+    font-size: 1.2rem;
+  }
+  .order-md-first {
+    order: 2;
+  }
+  .order-md-last {
+    order: 1;
+  }
+  .card-personal2 {
+    display: block !important;
+  }
+  .empresa {
+    font-size: 1rem;
+  }
+}

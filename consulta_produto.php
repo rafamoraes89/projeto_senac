@@ -14,35 +14,70 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 		<link rel="stylesheet" href="icons/style.css">
+		
+		<link rel="stylesheet" href="css/estilo_navega.css">
+		<link rel="stylesheet" href="css/estilo_consulta.css">
 	</head>
-
 	<body>
+	<nav class="navbar navbar-expand-lg navbar-dark">
+              <div class="container">
+                <a class="navbar-brand" href="#">
+                  <img src="logo-critical9.svg" alt="">
+                </a>
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarNav"
+                  aria-controls="navbarNav"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse nav-items" id="navbarNav">
+                  <ul class="navbar-nav ms-md-auto">
+                    <li class="nav-item">
+                      <a class="nav-link active"href="cadastro_clientes.php">Cadastrar/Clientes</a></a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="cadastro_produtos.php">Cadastrar/Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="consulta_cliente.php">Consultar/Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="consulta_produto.php">Consultar/Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link"
+                        href="logoff.php" target="_self">Sair</a>
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+          </nav>
 	<div class="container" id="container">
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-					<div class="container-fluid">
-									<a class="navbar-brand" href="#">Navbar</a>
-										<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-											<span class="navbar-toggler-icon"></span>
-										</button>
-								<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-									<div class="navbar-nav">
-											<a class="nav-link" href="cadastro_clientes.php" >Cadastrar/Clientes</a>
-											<a class="nav-link" href="cadastro_produtos.php">Cadastrar/Produtos</a>
-											<a class="nav-link" href="consulta_cliente.php" >Consultar/Clientes</a>
-											<a class="nav-link" href="consulta_produto.php" >Consultar/Produtos</a>
-											<a class="nav-link" href="logoff.php" target="_self">Sair</a>
-									</div>
-						</div>
-					</div>
-			</nav>
+	
 	</div>
-
-		<div class="container app">
-					<div class="container pagina">
+		<div class="container  mb-2">
 						<div class="row">
-							<div class="col">
-								<h4>Produtos</h4>
-								<hr />
+						<h2 class="text-center text-light mt-5 mb-5">Produtos</h2>
+							<div class="col table-responsive-sm">
+								<table class="table table-light table-striped">
+									<thead>
+										<tr>
+											<th scope="col" class="text-center">Id</th>
+											<th scope="col" class="text-center">Nome do Produto</th>
+											<th scope="col" class="text-center">Quantidade</th>
+											<th scope="col" class="text-center">Preço</th>
+											<th scope="col" class="text-center">Data de Entrada</th>
+											<th></th>
+										</tr>
+									</thead>
 								<?php  
 								include_once("conexao.php");
 								$registro_produtos = 'select * from produtos';
@@ -65,18 +100,24 @@
 									$valor_produto = $registro['valor_produto'];
 									$fabricacao_produto = $registro['fabricacao_produto']
 									?>
-								<div class="row mb-3 d-flex align-items-center tarefa" id="editar">
-									<div class="col-sm-9">Produto:<?php echo" $nome_produto" ?> | Qtd: <?php echo"$quantidade_produto" ?> | Valor: <?php echo"$valor_produto" ?> | Data de fabricação: <?php echo"$fabricacao_produto" ?>  </div>
-									<div class="col-sm-3 mt-2 d-flex justify-content-around">
-										<i class="icon-trash-o text-danger" onclick="excluir(<?php echo $id_produto ?>)"></i>
-										<i class="icon-edit text-info" onclick="editar(<?php echo $id_produto.',\''.$nome_produto.'\','.'\''.$quantidade_produto.'\','.'\''.$valor_produto.'\','.'\''.$fabricacao_produto.'\'' ?>)"></i>
-									</div>
+								<tbody">
+									<tr>
+										<td class="text-center"><?php echo $id_produto ?></td>
+										<td class="text-center"><?php echo" $nome_produto" ?></td>
+										<td class="text-center"><?php echo"$quantidade_produto" ?></td>
+										<td class="text-center"><?php echo"$valor_produto" ?></td>
+										<td class="text-center"><?php echo"$fabricacao_produto" ?></td>
+										<td class="text-center">
+										<i class="icon-trash-o p-3" onclick="excluir(<?php echo $id_produto ?>)"></i>
+										<i class="icon-edit" onclick="editar(<?php echo $id_produto.',\''.$nome_produto.'\','.'\''.$quantidade_produto.'\','.'\''.$valor_produto.'\','.'\''.$fabricacao_produto.'\'' ?>)"></i>
+										</td>
+									</tr>
+								</tbody>	
 								</div>
-									<hr>
 							<?php } ?>
+							</table>
 							</div>
 						</div>
-					</div>
 				</div>
 		</div>
 		<script>
@@ -142,10 +183,14 @@
 			inputSubmit.className = 'btn btn-success inputSubmit'
 			inputSubmit.innerHtml = 'atualizar'
 
-			let inputClose = document.createElement('a')
-			inputClose.className = 'btn btn-danger inputClose text-color-white'
-			inputClose.id = "inputCloseId"
-			inputClose.innerText = 'fechar'
+			let divClose = document.createElement('div')
+			divClose.className = 'divClose '
+			divClose.id = 'inputCloseId'
+
+			let iconX = document.createElement('i')
+			iconX.className = 'icon-x-octagon'
+
+			divClose.appendChild(iconX)
 			
 		
 
@@ -155,7 +200,7 @@
 			form.appendChild(inputQtd)
 			form.appendChild(inputPreco)
 			form.appendChild(inputDataFabricacao)
-			form.appendChild(inputClose)
+			form.appendChild(divClose)
 
 			form.appendChild(inputId)
 

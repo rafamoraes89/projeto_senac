@@ -8,20 +8,27 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <!--Fim Bootstrap-->
-    <link rel="stylesheet" href="estilo_index.css">
-    <title>Área Adiministrativa</title>
+     <!--Font Google-->
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!--CSS Próprios -->
+    <link rel="stylesheet" href="css/estilo_index.css">
+    <title>Área de login</title>
 </head>
 <body>
 
     <div class="container-my">
-       
         <div class="row-flex">
             <div class="col-my1 div-titulo"> 
                 <h1>
                     Critical Strike
                 </h1>
             <p>
-            Mussum Ipsum, cacilds vidis litro abertis. Diuretics paradis num copo é motivis de denguis. Admodum accumsan disputationi eu sit.
+            Mussum Ipsum, cacilds vidis litro abertis. Diuretics paradis num copo é motivis de denguis.
             </p>
             </div>
             <div class="div-form-login">
